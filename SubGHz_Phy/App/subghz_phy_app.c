@@ -393,7 +393,7 @@ static void answerMasterSync(void){
 	  /*Send Answer 3 times with a random delay between 0 and 6 seconds in whole seconds, because on-air-time can be up to 1 second*/
 	  for (i = 0; i<3; i++){
 		  srand(HAL_GetTick());//Set random number seed
-		  uint16_t rnddelay = (rand()%6)*1000;
+		  uint16_t rnddelay = (rand()%6)*1500;
 		  HAL_Delay(rnddelay);
 		  State = NONE;
 		  Radio.Send(BufferTx, PAYLOAD_LEN);
